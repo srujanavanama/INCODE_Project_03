@@ -4,14 +4,22 @@
   "description": "Express project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "create-database": "psql -U postgres -h localhost -f sql/create_database.sql",
+    "create-table-users": "psql -U postgres -h localhost -d mrcoffee -f sql/create_users.sql",
+    "create-table-schedules": "psql -U postgres -h localhost -d mrcoffee -f sql/create_schedules.sql",
+    "seed-users": "psql -U postgres -h localhost -d mrcoffee -f sql/seed_users.sql",
+    "seed-schedules": "psql -U postgres -h localhost -d mrcoffee -f sql/seed_schedules.sql"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pg-promise": "^10.10.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"

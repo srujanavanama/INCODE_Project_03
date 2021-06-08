@@ -1,0 +1,55 @@
+<%- include('../includes/header.ejs') %>
+<h2 class="heading two">New Schedule Form</h2>
+<section class="user input grey text">
+    <form method="post" action="/schedules/new" novalidate>
+        <div>
+            <label for="user_id">User *</label>
+            <select id="user_id" name="user_id">
+            <% for (i=0; i<users.length; i++) { %>
+                <option value=<%= i+1 %>> <%= users[i].firstname %> <%= users[i].lastname %></option>
+            <% } %> 
+            </select>
+        </div>
+        <div>
+            <label for="day">Day *</label>
+            <select id="day" name="day">
+                <option value=1>Monday</option>
+                <option value=2>Tuesday</option>
+                <option value=3>Wednesday</option>
+                <option value=4>Thursday</option>
+                <option value=5>Friday</option>
+                <option value=6>Saturday</option>
+                <option value=7>Sunday</option>
+            </select>
+        </div>
+        <div>
+            <label for="start_at">Start Time</label>
+            <select class="select-css" name="start_at" id="start_at">
+                <option value="12AM">12 AM</option>
+                <% for (i=1; i<12; i++) { %>
+                    <option value="<%= i %>AM"><%= i %> AM</option>
+                <% } %>
+                <option value="12PM">12 PM</option>
+                <% for (i=1; i<12; i++) { %>
+                    <option value="<%= i %>PM"><%= i %> PM</option>
+                <% } %> 
+            </select>
+        </div>
+        <div>
+            <label for="end_at">End Time</label>
+            <select name="end_at" id="end_at">
+                <option value="12AM">12 AM</option>
+                <% for (i=1; i<12; i++) { %>
+                    <option value="<%= i %>AM"><%= i %> AM</option>
+                <% } %>
+                <option value="12PM">12 PM</option>
+                <% for (i=1; i<12; i++) { %>
+                    <option value="<%= i %>PM"><%= i %> PM</option>
+                <% } %> 
+            </select>
+        </div>
+        <button class="center" id="formSubmit" type="submit">Submit</button>
+    </form>
+</section>
+
+<%- include('../includes/footer.ejs') %>

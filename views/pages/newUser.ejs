@@ -1,0 +1,24 @@
+<%- include('../includes/header.ejs') %>
+<h2 class="heading two">New User Form</h2>
+<section class="user input grey text">
+    <form method="post" action="/users/new" novalidate>
+        <div>
+            <label for="firstname">First Name *</label>
+            <input id="firstname" type="text" name="firstname" required maxlength="30" />
+        </div>
+        <div>
+            <label for="lastname">Last Name *</label>
+            <input id="lastname" type="text" name="lastname" required maxlength="30" />
+        </div>
+        <div>
+            <label for="email">Email Address *</label>
+            <input id="email" type="email" name="email" required />
+        </div>
+        <div>
+            <label for="password">Password *</label>
+            <input id="password" type="password" name="password" required minlength="8" />
+        </div>
+        <button class="center" id="formSubmit" type="submit">Submit</button>
+    </form>
+</section>
+<%- include('../includes/footer.ejs') %>
