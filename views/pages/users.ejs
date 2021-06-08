@@ -1,0 +1,13 @@
+<%- include('../includes/header.ejs') %> 
+<h2 class="heading two">Users list</h2>
+<% for (i=0; i<users.length; i++) { %>
+  <a href="/users/<%= users[i].user_id %>" }
+    ><%= users[i].firstname %> <%= users[i].lastname %></a
+  >
+  <div><strong>First Name:</strong> <%= users[i].firstname %></div>
+  <div><strong>Last Name:</strong> <%= users[i].lastname %></div>
+  <div><strong>Email:</strong> <%= users[i].email %></div>
+  <div><strong>Password:</strong> <%= users[i].password %></div>
+  <br />
+  <% } %>
+  <%- include('../includes/footer.ejs') %>

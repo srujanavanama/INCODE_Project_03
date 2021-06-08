@@ -1,0 +1,9 @@
+<%- include('../includes/header.ejs') %>
+<h2 class="heading two"><%- user.firstname %> <%- user.lastname %></h2>
+<div><strong>First Name: </strong><%- user.firstname %></div>
+<div><strong>Last Name:</strong> <%- user.lastname %></div>
+<div><strong>Email:</strong> <%- user.email %></div>
+<div><strong>Password:</strong> <%- user.password %></div>
+<br />
+<a href="/users/<%= user.user_id %>/schedules"><button>View schedules</button></a>
+<%- include('../includes/footer.ejs') %>
